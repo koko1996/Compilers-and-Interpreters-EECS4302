@@ -1,0 +1,22 @@
+var p1 // uninitialized
+var p2 // uninitialized
+var p3 // uninitialized
+var p4 // uninitialized
+var p5 // uninitialized
+var p6 // uninitialized
+var p7 // uninitialized
+var p8 // uninitialized
+var p9 // uninitialized
+var p10 // uninitialized
+var p11 // uninitialized
+var p12 // uninitialized
+var p13 // uninitialized
+var p14 // uninitialized
+var p15 // uninitialized
+var p16 // uninitialized
+var p17 // uninitialized
+var p18 // uninitialized
+var p19 // uninitialized
+var p20 // uninitialized
+verify (p1 or p2 or p3 or p4 or p5 or p6 or p7 or p8 or p9 or p10 or p11 or p12 or p13 or p14 or p15 or p16 or p17 or p18 or p19 or p20 )
+//verify (p1 and p2 and p3 and p4 and p5 and p6 and p7 and p8 and p9 and p10 and p11 and p12 and p13 and p14 and p15 and p16 and p17 and p18 and p19 and p20)

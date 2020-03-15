@@ -1,0 +1,14 @@
+package statement;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Program {
+	oriv List<Statement> expressions;
+	public Program(){
+		this.expressions = new ArrayList<>();
+	}
+	public void addExpression(Statement e){
+		this.expressions.add(e);
+	}
+}

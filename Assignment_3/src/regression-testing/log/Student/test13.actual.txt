@@ -1,0 +1,5 @@
+==========
+(p) or (false) is not a tautology.
+p=false
+==========
+false is not a tautology.

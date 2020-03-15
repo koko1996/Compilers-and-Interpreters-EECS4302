@@ -1,0 +1,47 @@
+package statement.expression;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Disjunction extends Composite {
+
+	public Disjunction(Expression left, Expression right){
+		super(left,right);
+	}
+
+	@Override
+	public List<String> witness(boolean expected) {
+		List<String> result = new ArrayList<>();
+		List<String> leftList;
+		List<String> rightList;
+		if(expected == false){
+			// left = false && right == false
+			leftList = this.left.witness(expected);
+			rightList = this.right.witness(expected);
+			crossAppend(result, leftList, rightList);
+		} else {
+			// expected == true
+			// left = false && right == true
+			leftList = this.left.witness(!expected);
+			rightList = this.right.witness(expected);
+			crossAppend(result, leftList, rightList);
+			
+			// left = true && right == false
+			leftList = this.left.witness(expected);
+			rightList = this.right.witness(!expected);
+			crossAppend(result, leftList, rightList);
+			
+			// left = true && right == true
+			leftList = this.left.witness(expected);
+			rightList = this.right.witness(expected);
+			crossAppend(result, leftList, rightList);
+		}
+		return result;
+	}
+	
+	@Override
+	public String toString() {
+		return "("+this.left.toString()+") or ("+this.left.toString()+")";
+	}		
+	
+}

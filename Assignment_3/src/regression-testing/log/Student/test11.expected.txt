@@ -1,0 +1,3 @@
+==========
+not ((p) and (q)) is not a tautology.
+p=true,q=true

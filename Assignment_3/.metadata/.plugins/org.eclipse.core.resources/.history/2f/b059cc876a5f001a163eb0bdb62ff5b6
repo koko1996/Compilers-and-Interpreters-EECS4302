@@ -1,0 +1,30 @@
+package statement.expression;
+
+import java.util.List;
+
+public abstract class Composite extends Expression {
+	protected Expression left;
+	protected Expression right;
+	
+	public Composite(Expression left, Expression right){
+		this.left = left;
+		this.right = right;
+	}
+	
+	public Expression getLeftExpr(){
+		return this.left;
+	}
+	
+	public Expression getRightExpr(){
+		return this.right;
+	}
+	
+	protected void crossAppend(List<String> result,List<String> left, List<String> right){
+		for(String lw: left){
+			for(String rw: right){
+				result.add(lw+","+rw);
+			}
+		}		
+	}
+	
+}

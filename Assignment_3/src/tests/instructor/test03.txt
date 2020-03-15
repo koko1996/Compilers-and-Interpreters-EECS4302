@@ -1,0 +1,15 @@
+// test for unknown identifiers 
+var q
+var p
+
+verify r // error
+
+verify p and q => p or q
+
+// errors
+verify p and q and r 
+verify p or q or r
+verify p => q => r
+verify p <=> q <=> r  
+
+verify p or q => p and q

@@ -1,0 +1,58 @@
+==========
+p is not a tautology.
+p=false
+==========
+p is not a tautology.
+p=false
+==========
+not (p) is not a tautology.
+p=true
+==========
+not (p) is not a tautology.
+p=true
+==========
+(p) and (q) is not a tautology.
+p=false,q=false
+p=false,q=true
+p=true,q=false
+==========
+(p) => (q) is not a tautology.
+p=true,q=false
+==========
+(p) => (q) is not a tautology.
+p=true,q=false
+==========
+(p) <=> (q) is not a tautology.
+p=false,q=true
+p=true,q=false
+==========
+(p) <=> (q) is not a tautology.
+p=false,q=true
+p=true,q=false
+==========
+(p) and (q) is not a tautology.
+p=false,q=false
+p=false,q=true
+p=true,q=false
+==========
+(p) and (q) is not a tautology.
+p=false,q=false
+p=false,q=true
+p=true,q=false
+==========
+(p) or (q) is not a tautology.
+p=false,q=false
+==========
+(p) or (q) is not a tautology.
+p=false,q=false
+==========
+(p) or (false) is not a tautology.
+p=false
+==========
+false is not a tautology.
+==========
+(q) or (p) is not a tautology.
+p=false,q=false
+==========
+(p) or (q) is not a tautology.
+p=false,q=false

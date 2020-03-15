@@ -1,0 +1,5 @@
+var p // uninitialized
+var q // uninitialized
+var q	
+verify p or q
+

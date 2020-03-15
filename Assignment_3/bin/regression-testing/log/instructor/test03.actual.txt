@@ -1,0 +1,5 @@
+Error: variable r not declared (5, 8)
+Error: variable r not declared (10, 20)
+Error: variable r not declared (11, 18)
+Error: variable r not declared (12, 18)
+Error: variable r not declared (13, 20)

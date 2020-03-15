@@ -1,0 +1,3 @@
+==========
+(p) or (q) is not a tautology.
+p=false,q=false

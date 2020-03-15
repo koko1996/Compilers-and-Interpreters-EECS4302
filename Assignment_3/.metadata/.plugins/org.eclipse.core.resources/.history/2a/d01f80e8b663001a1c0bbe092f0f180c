@@ -1,0 +1,27 @@
+package statement.declaration;
+
+import statement.Statement;
+
+public class VariableInitialization extends Statement  {
+	private String id;
+	private boolean value;
+	private String type;
+
+	public VariableInitialization(String id, String type, boolean value){
+		this.id = id;
+		this.type = type;
+		this.value = value;
+	}
+	
+	public String getID(){
+		return this.id;
+	}
+	
+	public String getType(){
+		return this.type;
+	}
+	
+	public boolean getValue(){
+		return this.value;
+	}
+}

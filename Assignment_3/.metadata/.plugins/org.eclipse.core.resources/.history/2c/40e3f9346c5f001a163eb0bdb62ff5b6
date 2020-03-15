@@ -1,0 +1,31 @@
+package statement.expression;
+
+import java.util.List;
+import java.util.Map;
+
+public abstract class Composite extends Expression {
+	protected Expression left;
+	protected Expression right;
+	
+	public Composite(Expression left, Expression right){
+		this.left = left;
+		this.right = right;
+	}
+	
+	public Expression getLeftExpr(){
+		return this.left;
+	}
+	
+	public Expression getRightExpr(){
+		return this.right;
+	}
+	
+	protected void crossAppend(	List<Map<String,Boolean>> result, List<Map<String,Boolean>> left, List<Map<String,Boolean>> right){
+//		for(String lw: left){
+//			for(String rw: right){
+//				result.add(lw+","+rw);
+//			}
+//		}		
+	}
+	
+}

@@ -1,0 +1,69 @@
+package statement;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import statement.verification.Verification;
+
+public class ExpressionProcessor {
+	List<Statement> list;
+	public Map<String, Boolean> values; // Symbol table for storing values of variables
+	
+	public ExpressionProcessor(List<Statement> list) {
+		this.list = list;
+		values = new HashMap<>();
+	}
+	
+	private String  prettyPrint(Map<String, Boolean> map) {
+		StringBuffer sb = new StringBuffer();
+		for (String s: map.keySet()) {
+			sb.append(s+"="+Boolean.toString(map.get(s)));
+		}		
+        // using iterators 
+        Iterator<Map.Entry<String, Boolean>> itr = map.entrySet().iterator(); 
+        while(itr.hasNext()) 
+        { 
+             Map.Entry<String, String> entry = itr.next(); 
+             System.out.println("Key = " + entry.getKey() +  
+                                 ", Value = " + entry.getValue()); 
+        } 
+		return sb.toString();
+	}
+
+	private List<String>  prettyPrint(List<Map<String, Boolean>> list) {
+		List<String> result = new ArrayList<>();
+		for (int i = 0; i < list.size(); i++) {
+			result.add(prettyPrint(list.get(i)));
+		}			
+		
+		return result;
+	}
+			
+	public List<String> getEvaluationResults(){
+		List<String> evaluations = new ArrayList<String>();
+		
+		for(Statement e: list){
+			if(e instanceof Verification){
+				Verification ver = (Verification) e;
+				List<Map<String,Boolean>> result = ver.getExpression().witness(false);
+				if(!result.isEmpty()){
+					evaluations.add("==========");
+					evaluations.add(ver.getExpression().toString()+" is not a tautology.");
+					evaluations.addAll(prettyPrint(result));	
+				} else {
+					evaluations.add("==========");
+					evaluations.add(ver.getExpression().toString()+" is a tautology.");
+				}
+				
+			} 
+		}
+		
+		return evaluations;
+	}
+
+
+
+}

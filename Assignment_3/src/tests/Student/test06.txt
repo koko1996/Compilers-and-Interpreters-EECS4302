@@ -1,0 +1,4 @@
+var p // uninitialized
+var q // uninitialized
+verify not( p or q)
+

@@ -1,0 +1,7 @@
+var q
+var r
+var p
+
+// implications
+verify not p or q <=> p => q
+verify p and q and r

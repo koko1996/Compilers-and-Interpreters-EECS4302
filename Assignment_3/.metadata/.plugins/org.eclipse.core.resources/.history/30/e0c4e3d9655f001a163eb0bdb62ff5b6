@@ -1,0 +1,6 @@
+verify p
+verify q
+verify r
+
+// implications
+verify not p or q <=> p => q

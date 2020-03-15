@@ -1,0 +1,26 @@
+package statement.expression;
+
+import java.util.List;
+import java.util.Map;
+
+public class Parantheses extends Expression {
+	private Expression expr;
+	
+	public Parantheses(Expression expr){
+		this.expr = expr;
+	}	
+	
+	public Expression getExpression(){
+		return this.expr;
+	}
+
+	@Override
+	public List<Map<String,Boolean>> witness(boolean expected) {
+		return expr.witness(expected);
+	}
+	
+	@Override
+	public String toString() {
+		return this.expr.toString();
+	}
+}

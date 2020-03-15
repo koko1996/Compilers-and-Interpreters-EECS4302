@@ -1,0 +1,4 @@
+==========
+(p) <=> (q) is not a tautology.
+p=false,q=true
+p=true,q=false

@@ -1,0 +1,36 @@
+==========
+(((p) and (q)) and (r)) <=> (((r) or (p)) or (q)) is not a tautology.
+q=false,p=false,r=true
+q=false,p=true,r=false
+q=false,p=true,r=true
+q=true,p=false,r=false
+q=true,p=false,r=true
+q=true,p=true,r=false
+==========
+true is a tautology.
+==========
+false is not a tautology.
+==========
+(true) or (false) is a tautology.
+==========
+(true) and (false) is not a tautology.
+==========
+(p) or (false) is not a tautology.
+p=false
+==========
+(p) or (true) is a tautology.
+==========
+((p) and (true)) and (q) is not a tautology.
+q=false,p=false
+q=false,p=true
+q=true,p=false
+==========
+((r) and (false)) and (q) is not a tautology.
+q=false,r=false
+q=false,r=true
+q=true,r=false
+q=true,r=true
+==========
+(true) and (false) is not a tautology.
+==========
+(true) or (false) is a tautology.

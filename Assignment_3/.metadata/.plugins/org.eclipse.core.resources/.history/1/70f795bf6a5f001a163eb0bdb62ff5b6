@@ -1,0 +1,41 @@
+package statement.expression;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Variable extends Expression {
+	private String id;
+	private Boolean value;
+	
+	public Variable(String id, Boolean value){
+		this.id = id;
+		this.value = value;
+	}
+	
+	public String getID(){
+		return this.id;
+	}
+	
+	public Boolean getValue(){
+		return this.value;
+	}
+
+	@Override
+	public List<String> witness(boolean expected) {
+		List<String> result = new ArrayList<String>();
+		
+		if(this.value == null || this.value == expected){
+			result.add(this.id+"="+Boolean.toString(expected));
+		}
+		
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return this.id;
+	}
+	
+	
+
+}

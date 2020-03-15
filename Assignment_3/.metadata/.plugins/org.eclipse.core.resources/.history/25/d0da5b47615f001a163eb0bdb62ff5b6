@@ -1,0 +1,21 @@
+package statement.expression;
+
+import java.util.List;
+
+public class Negation extends Expression {
+	private Expression expr;
+	
+	public Negation(Expression expr){
+		this.expr = expr;
+	}
+	
+	public Expression getExpression(){
+		return this.expr;
+	}
+
+	@Override
+	public List<String> witness(boolean expected) {
+		return expr.witness(!expected);
+	}
+	
+}

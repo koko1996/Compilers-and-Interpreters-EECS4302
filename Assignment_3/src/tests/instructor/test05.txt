@@ -1,0 +1,16 @@
+var q
+var p
+var r
+
+// parenthesized 
+verify p and q and r <=> r or p or q
+verify true
+verify false
+verify true or false
+verify true and false
+verify p or false
+verify p or true
+verify p and true and q
+verify r and false and q
+verify true and false
+verify true or false

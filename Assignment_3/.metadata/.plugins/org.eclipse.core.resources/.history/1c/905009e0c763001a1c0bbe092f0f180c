@@ -1,0 +1,25 @@
+package statement;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Program {
+	private List<Statement> expressions;
+	private List<String> variables;
+	
+	public Program(){
+		this.expressions = new ArrayList<>();
+	}
+	public void addExpression(Statement e){
+		this.expressions.add(e);
+	}
+	public List<Statement> getExpressions() {
+		return expressions;
+	}
+	public List<String> getVariables() {
+		return variables;
+	}
+	public void setVariables(List<String> variables) {
+		this.variables = variables;
+	}
+}

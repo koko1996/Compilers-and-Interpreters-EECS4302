@@ -1,0 +1,7 @@
+var p
+var q
+var r
+
+// parenthesized 
+verify (p or q) and r
+verify p or q and r

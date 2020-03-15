@@ -1,0 +1,26 @@
+// Declare three variables `p`, `q`, `r` that are uninitialized.
+// This means that when verifying formulas involving `p`, `q`, `r`,
+// both true and false must be considered for each of them. 
+var q
+var r
+var p
+
+verify p
+verify q
+verify r
+
+// implications
+verify not p or q <=> p => q
+verify p or q <=> p => q
+verify p and q <=> p => q
+
+// weakening/strengthening
+verify p and q => p or q
+verify p or q => p and q
+verify p and q <=> p or q
+
+// misc
+verify p and q and r
+verify p or q or r
+verify p => q => r
+verify p <=> q <=> r  

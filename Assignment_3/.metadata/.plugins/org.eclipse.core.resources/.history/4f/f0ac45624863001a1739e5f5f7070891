@@ -1,0 +1,76 @@
+package statement.expression;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+/*
+ * Composite Expression that contains of two expressions 
+ * namely left expression and right expression
+ */
+public abstract class Composite extends Expression {
+	protected Expression left;		
+	protected Expression right;
+	
+	/*
+	 * Constructor 
+	 * @param left the left expression
+	 * @param right the left expression 
+	 */
+	public Composite(Expression left, Expression right){
+		this.left = left;
+		this.right = right;
+	}
+	
+	/*
+	 * getter for the left expression
+	 * @return Expression representing the left expression 
+	 */
+	public Expression getLeftExpr(){
+		return this.left;
+	}
+	
+	/*
+	 * getter for the left expression
+	 * @return Expression representing the left expression 
+	 */
+	public Expression getRightExpr(){
+		return this.right;
+	}
+	
+	/*
+	 * helper function to check if there is any conflict in assignment of values of left
+	 * and right expression
+	 * @param left assignments of left expression 
+	 * @param right assignments of left expression
+	 * @return boolean true if there is no conflict and false otherwise 
+	 */
+	private boolean noConflict(Map<String,Boolean> left, Map<String,Boolean> right){
+		for(String key: left.keySet()){
+			if(key!="" && right.containsKey(key) && right.get(key)!=left.get(key)){
+				return false;
+			}
+		}
+		return true;
+	} 
+
+	
+	/*
+	 * helper function to combine the assignments of left and right expression
+	 * @param result list that will contain the result 
+	 * @param left assignments of left expression 
+	 * @param right assignments of left expression 
+	 */
+	protected void crossAppend(	List<Map<String,Boolean>> result, List<Map<String,Boolean>> left, List<Map<String,Boolean>> right){
+		for(int i=0; i<left.size();i++){
+			for(int j=0; j<right.size();j++){
+				if(noConflict(left.get(i), right.get(j))){
+					Map<String,Boolean> combined = new HashMap<>();
+					combined.putAll(left.get(i));
+					combined.putAll(right.get(j));
+					result.add(combined);					
+				}
+			}
+		}		
+	}
+	
+}

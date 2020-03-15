@@ -1,0 +1,37 @@
+package statement.expression;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class BooleanValue extends Expression {
+	private boolean value;
+	
+	public BooleanValue(boolean value){
+		this.value= value;
+	}	
+
+	public boolean getValue(){
+		return value;
+	}
+
+	@Override
+	public List<Map<String,Boolean>> witness(boolean expected) {
+
+
+
+		List<Map<String,Boolean>> result = new ArrayList<>();
+		if (this.value == expected ){
+			Map<String,Boolean> map= new HashMap<>();
+			map.put("",expected);
+			result.add(map);
+		}
+		return result;
+	}
+	
+	@Override
+	public String toString() {
+		return Boolean.toString(this.value);
+	}
+}
